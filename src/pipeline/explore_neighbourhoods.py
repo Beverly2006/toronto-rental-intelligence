@@ -16,3 +16,12 @@ df = pd.DataFrame(rows)
 
 print(df.columns.tolist())
 print(df.head())
+
+print()
+key_columns = ["AREA_SHORT_CODE", "AREA_LONG_CODE", "AREA_NAME", "AREA_DESC"]
+print(df[key_columns].head(10).to_string())
+
+print()
+print("Unique names:", df["AREA_NAME"].nunique())
+print("Missing values per column:")
+print(df.isna().sum())
