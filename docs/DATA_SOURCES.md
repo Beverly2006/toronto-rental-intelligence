@@ -5,4 +5,6 @@ No listing sites were scraped.
 
 | Dataset | Publisher | URL | Licence | Downloaded |
 |---|---|---|---|---|
-| (fill in as each dataset is downloaded) | | | | |
+| Toronto Neighbourhoods (158), GeoJSON, WGS84 | City of Toronto, Social Development, Finance & Administration | https://open.toronto.ca/dataset/neighbourhoods/ | Open Government Licence - Toronto | 2026-11-21 |
+
+Publisher's data last refreshed: Feb 20, 2026.
