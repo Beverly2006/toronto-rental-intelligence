@@ -61,3 +61,12 @@ def test_real_file_passes_sanity_checks():
     assert df["avg_rent"].dropna().between(500, 6000).all()
     assert (df["is_suppressed"] == df["avg_rent"].isna()).all()
     assert set(df["reliability"].dropna()) <= {"a", "b", "c", "d"}
+
+def test_loader_handles_windows_1252_encoding(tmp_path):
+    path = tmp_path / "export.csv"
+    path.write_bytes(SAMPLE.encode("cp1252"))
+
+    df = load_cmhc_rent_table(path)
+
+    assert df["cma"].iloc[0] == "Toronto"
+    assert len(df) == 15

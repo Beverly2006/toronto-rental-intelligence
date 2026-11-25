@@ -80,11 +80,3 @@ def load_cmhc_rent_table(path: Path = RAW_FILE) -> pd.DataFrame:
         text = raw_bytes.decode("cp1252")
     return parse_cmhc_rent_table(text)
 
-def test_loader_handles_windows_1252_encoding(tmp_path):
-    path = tmp_path / "export.csv"
-    path.write_bytes(SAMPLE.encode("cp1252"))
-
-    df = load_cmhc_rent_table(path)
-
-    assert df["cma"].iloc[0] == "Toronto"
-    assert len(df) == 15
